@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css?family="Montserrat"&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  justify-content: space-between;
+  background-color: #272829;
+  margin: 0;
+  padding: 0;
+}
+
+#hamburger {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  padding: 2rem;
+  gap: .3rem;
+  transition: .5s;
+}
+
+.icon {
+  color: white;
+  transition: transform .4s, border-bottom .2s, padding-bottom .2s, color .2s;
+}
+
+.link:hover {
+  cursor: pointer;
+}
+
+#hamburger:hover {
+  background-color: black;
+}
+
+span {
+  height: .3rem;
+  width: 2.5rem;
+  background-color: white;
+}
+
+.socials {
+  display: flex;
+  padding: 1.5rem 2.5rem;
+  gap: 1.5rem;
+}
+
+.social-link:hover .icon:hover {
+  border-bottom: .25rem solid white;
+  padding-bottom: .2rem;
+  transform: scale(1.1);
+}
+
+.nav-links {
+  display: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  color: white;
+  font-size: 1.25rem;
+  padding: 1.5rem 2.5rem;
+  transition: .5s;
+}
+
+.link-wrapper {
+  transition: .1s;
+}
+
+.nav-link:hover .link-wrapper {
+  border-bottom: .2rem solid white;
+  padding-bottom: .1rem;
+}
+
+.nav-link:hover {
+  background-color: black;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 598px) {
+  .nav {
+    width: 598px;
+  }
+
+  #hamburger {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .nav {
+    width: 768px;
+  }
+}
+
+@media screen and (min-width: 1028px) {
+  .nav {
+    width: 1028px;
+  }
+}
