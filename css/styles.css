@@ -13,6 +13,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 .nav {
@@ -33,7 +34,7 @@ body {
   flex-direction: column;
   width: auto;
   padding: 2rem;
-  gap: .3rem;
+  gap: .5rem;
   transition: .5s;
 }
 
@@ -50,10 +51,11 @@ body {
   background-color: black;
 }
 
-span {
+.bars {
   height: .3rem;
   width: 2.5rem;
   background-color: white;
+  transition: all .2s ease-in-out;
 }
 
 .socials {
@@ -79,9 +81,16 @@ span {
   font-size: 1.25rem;
   padding: 1.5rem 2.5rem;
   transition: .5s;
+  text-decoration: none;
+  background-color: #272829;
+}
+
+.nav-link:visited {
+  color: white;
 }
 
 .link-wrapper {
+  width: auto;
   transition: .1s;
 }
 
@@ -93,6 +102,33 @@ span {
 .nav-link:hover {
   background-color: black;
   cursor: pointer;
+}
+
+.transform-bars:nth-of-type(1) {
+  transition: all .2s ease-in-out;
+  transform: rotate(45deg);
+  transform-origin: top left;
+  width: 2.4rem;
+}
+
+.transform-bars:nth-of-type(2) {
+  transition: all .2s ease-in-out;
+  transform-origin: center;
+  width: 0;
+}
+
+.transform-bars:nth-of-type(3) {
+  transition: all .2s ease-in-out;
+  transform: rotate(-45deg);
+  transform-origin: bottom left;
+  width: 2.4rem;
+}
+
+.open {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 5.9rem;
 }
 
 @media screen and (min-width: 598px) {
