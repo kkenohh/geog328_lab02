@@ -19,17 +19,14 @@ accordions.forEach(accordion => accordion.addEventListener("click", (e) => {
   }
 }));
 
+let current = window.location.href;
+console.log(current)
 
-let slideIndex = 0;
-showSlides();
+let navs = document.querySelectorAll('.nav-link');
 
-function showSlides() {
-  let slides = document.getElementsByClassName("mySlides");
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
+for (let i = 0; i < navs.length; i++) {
+  if (navs[i].href === current) {
+    navs[i].classList.add('active-tab');
+    break;
   }
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}
-  slides[slideIndex-1].style.display = "block";
-  setTimeout(showSlides, 5000);
 }
