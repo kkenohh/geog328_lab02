@@ -27,6 +27,7 @@ body {
   background-color: #272829;
   margin: 0;
   padding: 0;
+  transition: .4s;
 }
 
 #hamburger {
@@ -131,8 +132,49 @@ body {
   top: 5.9rem;
 }
 
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+.post {
+  padding: 2rem 3rem;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.accordion:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 1rem;
+  color: #272829;
+  float: right;
+  /* margin-left: .1rem; */
+}
+
+.active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+.header {
+  margin: 1rem 0;
+}
+
 @media screen and (min-width: 598px) {
-  .nav {
+  .nav, .accordion, .active, .post {
     width: 598px;
   }
 
@@ -145,16 +187,20 @@ body {
     align-items: center;
     justify-content: space-evenly;
   }
+
+  .nav-link {
+    font-size: 1rem;
+  }
 }
 
 @media screen and (min-width: 768px) {
-  .nav {
+  .nav, .accordion, .active, .post {
     width: 768px;
   }
 }
 
 @media screen and (min-width: 1028px) {
-  .nav {
+  .nav, .accordion, .active, .post {
     width: 1028px;
   }
 }
