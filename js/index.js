@@ -20,7 +20,6 @@ accordions.forEach(accordion => accordion.addEventListener("click", (e) => {
 }));
 
 let current = window.location.href;
-console.log(current)
 
 let navs = document.querySelectorAll('.nav-link');
 
